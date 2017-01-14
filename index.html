@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+  (function() {
+
+    const omarchehab = {
+      start: Date.now()
+    }
+
+  })()
+  </script>
   <meta name="viewport"
     content="width=device-width,
       initial-scale=1,
       maximum-scale=1,
       user-scalable=no"
   />
-  <script src="js/bundle.min.js" async></script>
-  <link rel="stylesheet" href="css/bundle.min.css" />
 </head>
-<body>
-  Hello world!
+<body style="background-color: #223;">
+  <div id="loading">Hello</div>
+  <div id="navigation">
+    <a class="navigation--item"
+      id="navigation--profile"
+      href="#profile"
+    >
+      <i class="glyphicon glyphicon-briefcase"></i>
+      Profile
+    </a>
+    <a class="navigation--item"
+      id="navigation--resume"
+      href="#resume"
+    >
+      <i class="glyphicon glyphicon-list-alt"></i>
+      Resume
+    </a>
+    <a class="navigation--item"
+      id="navigation--portfolio"
+      href="#portfolio"
+    >
+      <i class="glyphicon glyphicon-book"></i>
+      Portfolio
+    </a>
+    <a class="navigation--item"
+      id="navigation--contact"
+      href="#contact"
+    >
+      <i class="glyphicon glyphicon-comment"></i>
+      Contact
+    </a>
+  </div>
+  <link rel="stylesheet" href="css/bundle.min.css" />
+  <script src="js/bundle.min.js"></script>
 </body>
 </html>
