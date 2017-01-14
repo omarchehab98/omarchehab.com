@@ -1,0 +1,35 @@
+{
+  "name": "omarchehab98.github.io",
+  "version": "1.0.0",
+  "description": "for github pages",
+  "main": "index.js",
+  "scripts": {
+    "build-live": "nodemon -e js,jsx,less -w src -x 'npm run build'",
+    "build": "npm run build-js && npm run build-less",
+    "build-js": "browserify -t [ babelify --presets [ es2015 react ] ] -d -p [ minifyify --map bundle.js.map --output js/bundle.js.map ] src/jsx/index.jsx > js/bundle.min.js",
+    "build-less": "lessc src/less/index.less | uglifycss > css/bundle.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omarchehab98/omarchehab98.github.io.git"
+  },
+  "author": "Omar Chehab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omarchehab98/omarchehab98.github.io/issues"
+  },
+  "homepage": "https://github.com/omarchehab98/omarchehab98.github.io#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.3.7",
+    "browserify": "^13.3.0",
+    "less": "^2.7.2",
+    "minifyify": "^7.3.4",
+    "nodemon": "^1.11.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "uglifycss": "0.0.25"
+  }
+}
