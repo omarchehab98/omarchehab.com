@@ -1,96 +1,102 @@
-const navigation = {
-  profile: document.getElementById('navigation--profile'),
-  resume: document.getElementById('navigation--resume'),
-  portfolio: document.getElementById('navigation--portfolio'),
-  contact: document.getElementById('navigation--contact'),
-  activate: element => {
-    navigation.deactivate('profile')
-    navigation.deactivate('resume')
-    navigation.deactivate('portfolio')
-    navigation.deactivate('contact')
-    navigation[element].className += ' active'
-  },
-  deactivate: element => {
-    const changedClasses = navigation[element].className.replace(/ ?active/, '')
-    navigation[element].className = changedClasses
+window.onload = function() {
+  const navigation = {
+    profile: document.getElementById('navigation--profile'),
+    resume: document.getElementById('navigation--resume'),
+    portfolio: document.getElementById('navigation--portfolio'),
+    contact: document.getElementById('navigation--contact'),
+    activate: element => {
+      navigation.deactivate('profile')
+      navigation.deactivate('resume')
+      navigation.deactivate('portfolio')
+      navigation.deactivate('contact')
+      navigation[element].className += ' active'
+      navigation.active = navigation[element]
+    },
+    deactivate: element => {
+      const changedClasses = navigation[element].className.replace(/ ?active/, '')
+      navigation[element].className = changedClasses
+    },
+    active: undefined,
   }
-}
 
-const sections = {
-  profile: document.getElementById('profile'),
-  showProfile: function() {
-    const viewportHeight = window.innerHeight
-    const profileHeight = sections.profile.offsetHeight
-    const navigationHeight = sections.navigation.offsetHeight
-    const verticalMargin = (viewportHeight - profileHeight - navigationHeight) / 2
-    sections.profile.style.marginTop = `${verticalMargin}px`
-    sections.navigation.style.marginTop = `${verticalMargin}px`
-  },
-  hideProfile: function() {
-    const profileHeight = sections.profile.offsetHeight
-    const navigationHeight = sections.navigation.offsetHeight + 4
-    sections.profile.style.marginTop = `-${profileHeight}px`
-    sections.navigation.style.marginTop = '0px'
-  },
-  navigation: document.getElementById('navigation'),
-  resume: document.getElementById('resume'),
-  portfolio: document.getElementById('portfolio'),
-  contact: document.getElementById('contact'),
-}
+  const sections = {
+    profile: document.getElementById('profile'),
+    showProfile: function() {
+      const viewportHeight = window.innerHeight
+      const profileHeight = sections.profile.offsetHeight
+      const navigationHeight = sections.navigation.offsetHeight
+      const verticalMargin = (viewportHeight - profileHeight - navigationHeight) / 2
+      sections.profile.style.marginTop = `${verticalMargin}px`
+      sections.navigation.style.marginTop = `${verticalMargin}px`
+    },
+    hideProfile: function() {
+      const profileHeight = sections.profile.offsetHeight
+      const navigationHeight = sections.navigation.offsetHeight + 4
+      sections.profile.style.marginTop = `-${profileHeight}px`
+      sections.navigation.style.marginTop = '0px'
+    },
+    navigation: document.getElementById('navigation'),
+    show: function(page) {
+      sections.resume.style.top = '66px'
+      sections.portfolio.style.top = '66px'
+      sections.contact.style.top = '66px'
 
-navigation.profile.addEventListener('click', event => {
-  event.preventDefault()
-  sections.showProfile()
+      sections[page].style.left = '0'
+    },
+    resume: document.getElementById('resume'),
+    portfolio: document.getElementById('portfolio'),
+    contact: document.getElementById('contact'),
+  }
 
-  sections.resume.style.top = `100vh`
-  sections.portfolio.style.top = `100vh`
-  sections.contact.style.top = `100vh`
+  navigation.profile.addEventListener('click', event => {
+    event.preventDefault()
 
-  navigation.activate('profile')
-})
+    sections.resume.style.top = `100vh`
+    sections.portfolio.style.top = `100vh`
+    sections.contact.style.top = `100vh`
 
-navigation.resume.addEventListener('click', event => {
-  event.preventDefault()
-  sections.hideProfile()
+    sections.showProfile()
+    navigation.activate('profile')
+  })
 
-  sections.resume.style.top = '66px'
-  sections.portfolio.style.top = '66px'
-  sections.contact.style.top = '66px'
+  navigation.resume.addEventListener('click', event => {
+    event.preventDefault()
 
-  sections.resume.style.left = `0`
-  sections.portfolio.style.left = `100vw`
-  sections.contact.style.left = `200vw`
-  navigation.activate('resume')
-})
+    sections.portfolio.style.left = `100vw`
+    sections.contact.style.left = `200vw`
 
-navigation.portfolio.addEventListener('click', event => {
-  event.preventDefault()
-  sections.hideProfile()
+    sections.hideProfile()
+    sections.show('resume')
+    navigation.activate('resume')
+  })
 
-  sections.resume.style.top = '66px'
-  sections.portfolio.style.top = '66px'
-  sections.contact.style.top = '66px'
+  navigation.portfolio.addEventListener('click', event => {
+    event.preventDefault()
 
-  sections.resume.style.left = `-100vw`
-  sections.portfolio.style.left = `0`
-  sections.contact.style.left = `100vw`
-  navigation.activate('portfolio')
-})
+    sections.resume.style.left = `-100vw`
+    sections.contact.style.left = `100vw`
 
-navigation.contact.addEventListener('click', event => {
-  event.preventDefault()
-  sections.hideProfile()
+    sections.hideProfile()
+    sections.show('portfolio')
+    navigation.activate('portfolio')
+  })
 
-  sections.resume.style.top = '66px'
-  sections.portfolio.style.top = '66px'
-  sections.contact.style.top = '66px'
+  navigation.contact.addEventListener('click', event => {
+    event.preventDefault()
 
-  sections.resume.style.left = `-200vw`
-  sections.portfolio.style.left = `-100vw`
-  sections.contact.style.left = `0`
-  navigation.activate('contact')
-})
+    sections.resume.style.left = `-200vw`
+    sections.portfolio.style.left = `-100vw`
 
-document.body.style.overflowY = 'hidden'
+    sections.hideProfile()
+    sections.show('contact')
+    navigation.activate('contact')
+  })
 
-navigation.profile.click()
+  document.body.style.overflowY = 'hidden'
+
+  window.addEventListener('resize', event => {
+    navigation.active.click()
+  })
+
+  navigation.profile.click()
+};
