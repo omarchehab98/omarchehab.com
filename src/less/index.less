@@ -8,14 +8,15 @@ body {
 }
 
 #loading {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  text-align: center;
-  font-size: 3rem;
-  color: #fff;
+
   opacity: 0;
   animation: loading 3s;
   animation-fill-mode: forwards;
@@ -38,11 +39,30 @@ body {
   }
 }
 
+#sections {
+  opacity: 0;
+  animation: loading--finished 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loading--finished {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #navigation {
   display: flex;
   color: #ddd;
   background-color: #568;
   text-align: center;
+  transition: margin 1s;
 }
 
 .navigation--item {
@@ -63,10 +83,91 @@ body {
     text-decoration: none;
   }
 
-  .active,
+  &.active,
   &:active {
     color: #fff;
     text-decoration: none;
   }
 
+}
+
+#profile {
+  background-color: #eee;
+  padding: 30px 0;
+  transition: margin 1s;
+}
+
+#profile--name {
+  color: #333;
+  text-align: center;
+}
+
+.profile--item {
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+}
+
+#resume {
+  position: absolute;
+  overflow-y: scroll;
+  max-height: ~'calc(100vh - 66px)';
+  background-color: #eee;
+  transition: top 1s, left 1s;
+}
+
+.resume--item {
+  color: #333;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.resume--item-title {
+  position: relative;
+  height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &:before {
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 90%;
+    height: 1px;
+    content: '';
+  }
+}
+
+.resume--item-title-text {
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.resume--item-website {
+  display: block;
+  font-weight: 300;
+}
+
+#portfolio {
+  position: absolute;
+  overflow-y: scroll;
+  max-height: ~'calc(100vh - 66px)';
+  background-color: #eee;
+  transition: top 1s, left 1s;
+}
+
+#contact {
+  position: absolute;
+  overflow-y: scroll;
+  max-height: ~'calc(100vh - 66px)';
+  background-color: #eee;
+  transition: top 1s, left 1s;
 }

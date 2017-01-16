@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-  (function() {
-
-    const omarchehab = {
-      start: Date.now()
-    }
-
-  })()
-  </script>
   <meta name="viewport"
     content="width=device-width,
       initial-scale=1,
@@ -19,35 +10,136 @@
 </head>
 <body style="background-color: #223;">
   <div id="loading">Hello</div>
-  <div id="navigation">
-    <a class="navigation--item"
-      id="navigation--profile"
-      href="#profile"
-    >
-      <i class="glyphicon glyphicon-briefcase"></i>
-      Profile
-    </a>
-    <a class="navigation--item"
-      id="navigation--resume"
-      href="#resume"
-    >
-      <i class="glyphicon glyphicon-list-alt"></i>
-      Resume
-    </a>
-    <a class="navigation--item"
-      id="navigation--portfolio"
-      href="#portfolio"
-    >
-      <i class="glyphicon glyphicon-book"></i>
-      Portfolio
-    </a>
-    <a class="navigation--item"
-      id="navigation--contact"
-      href="#contact"
-    >
-      <i class="glyphicon glyphicon-comment"></i>
-      Contact
-    </a>
+  <div id="sections">
+    <div id="profile" class="col-xs-12">
+      <h1 id="profile--name" style="margin-top: 0;">
+        Omar Chehab
+      </h1>
+      <p class="profile--item">
+        Toronto, Canada
+      </p>
+      <p class="profile--item">
+        <img src="media/email.png">
+      </p>
+      <div class="profile--item">
+        <a href="https://github.com/omarchehab98">
+          <img width="36px" src="media/octocat.png" alt="GitHub">
+          <span style="display: inline-block;width: 100%;">GitHub</span>
+        </a>
+      </div>
+    </div>
+    <div id="navigation" class="col-xs-12">
+      <a id="navigation--profile"
+        class="navigation--item"
+        href="#profile"
+      >
+        <i class="glyphicon glyphicon-briefcase"></i>
+        Profile
+      </a>
+      <a id="navigation--resume"
+        class="navigation--item"
+        href="#resume"
+      >
+        <i class="glyphicon glyphicon-list-alt"></i>
+        Résumé
+      </a>
+      <a id="navigation--portfolio"
+        class="navigation--item"
+        href="#portfolio"
+      >
+        <i class="glyphicon glyphicon-book"></i>
+        Portfolio
+      </a>
+      <a id="navigation--contact"
+        class="navigation--item"
+        href="#contact"
+      >
+        <i class="glyphicon glyphicon-comment"></i>
+        Contact
+      </a>
+    </div>
+    <div id="resume" class="col-xs-12">
+      <div class="resume--item col-xs-12">
+        <a href="media/resume.pdf">Download PDF</a>
+      </div>
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text">Al Jaras</span>
+        </div>
+        <div class="resume--item-website col-xs-12">
+          08/2016 &ndash; Present
+        </div>
+        <div class="resume--item-website col-xs-12">
+          Beirut, Lebanon
+        </div>
+        <div class="resume--item-website col-xs-12">
+          <a href="https://aljaras.com">
+            aljaras.com
+          </a>
+        </div>
+      </div>
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text">247studios</span>
+        </div>
+        <div class="resume--item-website col-xs-12">
+          06/2016 &ndash; Present
+        </div>
+        <div class="resume--item-website col-xs-12">
+          Beirut, Lebanon
+        </div>
+        <div class="resume--item-website col-xs-12">
+          <a href="https://247studios.me">
+            247studios.me
+          </a>
+        </div>
+      </div>
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text" style="width: 163px;">Events A La Carte</span>
+        </div>
+        <div class="resume--item-website col-xs-12">
+          09/2015 &ndash; 04/2016
+        </div>
+        <div class="resume--item-website col-xs-12">
+          Manama, Bahrain
+        </div>
+        <div class="resume--item-website col-xs-12">
+          <a href="https://eventsalacarte.net">
+            eventsalacarte.net
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="portfolio" class="col-xs-12">
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text">Model Format</span>
+        </div>
+        <a class="resume--item-website" href="https://modelformat.com">
+          modelformat.com
+        </a>
+      </div>
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text">Sentigator</span>
+        </div>
+        <a class="resume--item-website" href="https://sentigator.com">
+          sentigator.com
+        </a>
+      </div>
+      <div class="resume--item col-xs-12">
+        <div class="resume--item-title">
+          <span class="resume--item-title-text">IO Reboot</span>
+        </div>
+        <a class="resume--item-website" href="https://play.google.com/store/apps/details?id=omarchehab.io">
+          <img src="media/google-play-badge.png" alt="Get it on Google Play"/>
+        </a>
+      </div>
+    </div>
+    <div id="contact" class="col-xs-12">
+      Contact me!
+    </div>
   </div>
   <link rel="stylesheet" href="css/bundle.min.css" />
   <script src="js/bundle.min.js"></script>
