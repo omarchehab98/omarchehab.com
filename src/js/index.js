@@ -98,16 +98,31 @@ window.onload = function() {
     navigation.activate('contact')
   })
 
-  document.body.style.overflowX = 'hidden'
-  document.body.style.overflowY = 'hidden'
-
-  sections.prepareStyle('resume')
-  sections.prepareStyle('portfolio')
-  sections.prepareStyle('contact')
-
   window.addEventListener('resize', event => {
     navigation.active.click()
   })
 
+  document.addEventListener('touchmove', event => {
+    event.preventDefault()
+  })
+
+  resume.addEventListener('touchmove', event => {
+    event.stopPropagation()
+  })
+
+  portfolio.addEventListener('touchmove', event => {
+    event.stopPropagation()
+  })
+
+  contact.addEventListener('touchmove', event => {
+    event.stopPropagation()
+  })
+
+  document.body.style.overflow = 'hidden'
+
+  sections.prepareStyle('resume')
+  sections.prepareStyle('portfolio')
+  sections.prepareStyle('contact')
+  
   navigation.profile.click()
 };
