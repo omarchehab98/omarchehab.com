@@ -25,15 +25,15 @@ window.onload = function() {
       const viewportHeight = window.innerHeight
       const profileHeight = sections.profile.offsetHeight
       const navigationHeight = sections.navigation.offsetHeight
-      const verticalMargin = (viewportHeight - profileHeight - navigationHeight) / 2
-      sections.profile.style.marginTop = `${verticalMargin}px`
-      sections.navigation.style.marginTop = `${verticalMargin}px`
+      const profileTop = (viewportHeight - profileHeight - navigationHeight) / 2
+      sections.profile.style.top = `${profileTop}px`
+      sections.navigation.style.top = `calc(100vh - 66px)`
     },
     hideProfile: function() {
       const profileHeight = sections.profile.offsetHeight
       const navigationHeight = sections.navigation.offsetHeight + 4
-      sections.profile.style.marginTop = `-${profileHeight}px`
-      sections.navigation.style.marginTop = '0px'
+      sections.profile.style.top = `-${profileHeight}px`
+      sections.navigation.style.top = '0px'
     },
     navigation: document.getElementById('navigation'),
     show: function(page) {
@@ -106,6 +106,8 @@ window.onload = function() {
   document.body.style.width = '100vw'
   document.body.style.height = '100vh'
 
+  sections.profile.style.position = 'fixed'
+  sections.navigation.style.position = 'fixed'
   sections.prepareStyle('resume')
   sections.prepareStyle('portfolio')
   sections.prepareStyle('contact')
