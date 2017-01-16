@@ -46,7 +46,7 @@ window.onload = function() {
     prepareStyle: function(page) {
       sections[page].style.position = 'absolute'
       sections[page].style.overflowY = 'scroll'
-      sections[page].style.maxHeight = 'calc(100vh - 66px)'
+      sections[page].style.height = 'calc(100vh - 66px)'
       sections[page].style.transition = 'top 1s, left 1s'
     },
     resume: document.getElementById('resume'),
