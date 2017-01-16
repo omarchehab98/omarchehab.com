@@ -118,11 +118,12 @@ window.onload = function() {
     event.stopPropagation()
   })
 
+  document.documentElement.style.overflow = 'hidden'
   document.body.style.overflow = 'hidden'
 
   sections.prepareStyle('resume')
   sections.prepareStyle('portfolio')
   sections.prepareStyle('contact')
-  
+
   navigation.profile.click()
 };
