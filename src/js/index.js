@@ -44,7 +44,7 @@ window.onload = function() {
       sections[page].style.left = '0'
     },
     prepareStyle: function(page) {
-      sections[page].style.position = 'absolute'
+      sections[page].style.position = 'fixed'
       sections[page].style.overflowY = 'scroll'
       sections[page].style.height = 'calc(100vh - 66px)'
       sections[page].style.transition = 'top 1s, left 1s'
@@ -102,24 +102,9 @@ window.onload = function() {
     navigation.active.click()
   })
 
-  document.addEventListener('touchmove', event => {
-    event.preventDefault()
-  })
-
-  resume.addEventListener('touchmove', event => {
-    event.stopPropagation()
-  })
-
-  portfolio.addEventListener('touchmove', event => {
-    event.stopPropagation()
-  })
-
-  contact.addEventListener('touchmove', event => {
-    event.stopPropagation()
-  })
-
-  document.documentElement.style.overflow = 'hidden'
   document.body.style.overflow = 'hidden'
+  document.body.style.width = '100vw'
+  document.body.style.height = '100vh'
 
   sections.prepareStyle('resume')
   sections.prepareStyle('portfolio')
