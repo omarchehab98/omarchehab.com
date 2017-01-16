@@ -43,6 +43,12 @@ window.onload = function() {
 
       sections[page].style.left = '0'
     },
+    prepareStyle: function(page) {
+      sections[page].style.position = 'absolute'
+      sections[page].style.overflowY = 'scroll'
+      sections[page].style.maxHeight = 'calc(100vh - 66px)'
+      sections[page].style.transition = 'top 1s, left 1s'
+    },
     resume: document.getElementById('resume'),
     portfolio: document.getElementById('portfolio'),
     contact: document.getElementById('contact'),
@@ -92,7 +98,12 @@ window.onload = function() {
     navigation.activate('contact')
   })
 
+  document.body.style.overflowX = 'hidden'
   document.body.style.overflowY = 'hidden'
+
+  sections.prepareStyle('resume')
+  sections.prepareStyle('portfolio')
+  sections.prepareStyle('contact')
 
   window.addEventListener('resize', event => {
     navigation.active.click()
