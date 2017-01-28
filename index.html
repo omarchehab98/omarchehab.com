@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Omar Chehab</title>
+  <meta name="author" content="Omar Chehab">
+  <meta name="robots" content="noindex">
   <meta name="viewport"
     content="width=device-width,
       initial-scale=1,
       maximum-scale=1,
       user-scalable=no"
   />
-  <title>Omar Chehab</title>
+  <link rel="stylesheet" href="css/bundle.min.css" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,234 +22,321 @@
 </head>
 <body style="background-color: #223;">
 
-  <div id="loading">Hello</div>
+  <div id="loading" aria-label="Hello, the page is loading.">
+    Hello
+  </div>
+
 
   <!-- SECTIONS -->
-
   <div id="sections">
+
+
 
     <!-- 1) PROFILE -->
     <div id="profile" class="col-xs-12">
+
       <h1 id="profile--name" style="margin-top: 0;">Omar Chehab</h1>
+
       <p class="profile--item">Toronto, Canada</p>
-      <p class="profile--item"><img src="media/email.png"></p>
+
       <div class="profile--item">
-        <a href="https://github.com/omarchehab98">
-          <img width="36px" src="media/octocat.png" alt="GitHub">
+
+        <a aria-label="Git Hub" href="https://github.com/omarchehab98">
+          <img width="36px" src="media/octocat.png" alt="Octocat">
           <span style="display: inline-block;width: 100%;">GitHub</span>
         </a>
+
       </div>
-    </div>
+
+    </div><!-- /PROFILE -->
+
+
 
     <!-- NAVIGATION -->
-    <div id="navigation" class="col-xs-12">
-      <a id="navigation--profile" class="navigation--item" href="#profile">
-        <i class="glyphicon glyphicon-user"></i>
+    <div id="navigation" class="col-xs-12"
+      role="menubar">
+
+      <a id="navigation--profile" class="navigation--item" href="#profile"
+        role="menuitem" tabindex="1">
+        <i role="icon" class="glyphicon glyphicon-user"></i>
         Profile
       </a>
-      <a id="navigation--resume" class="navigation--item" href="#resume" >
-        <i class="glyphicon glyphicon-list-alt"></i>
+
+      <a id="navigation--resume" class="navigation--item" href="#resume"
+        role="menuitem" tabindex="2">
+        <i role="icon" class="glyphicon glyphicon-list-alt"></i>
         Résumé
       </a>
-      <a id="navigation--portfolio" class="navigation--item" href="#portfolio">
-        <i class="glyphicon glyphicon-briefcase"></i>
+
+      <a id="navigation--portfolio" class="navigation--item" href="#portfolio"
+        role="menuitem" tabindex="3">
+        <i role="icon" class="glyphicon glyphicon-briefcase"></i>
         Portfolio
       </a>
-      <a id="navigation--contact" class="navigation--item" href="#contact">
-        <i class="glyphicon glyphicon-comment"
+
+      <a id="navigation--contact" class="navigation--item" href="#contact"
+        role="menuitem" tabindex="4">
+        <i role="icon" class="glyphicon glyphicon-comment"
           style="padding-top: 10px; padding-bottom: 6px;"></i>
         Contact
       </a>
-    </div>
+
+    </div><!-- /NAVIGATION -->
+
+
 
     <!-- 2) RESUME -->
     <div id="resume" class="col-xs-12">
+
       <div class="resume--item col-xs-12" style="margin: 0;">
-        <a href="media/resume.pdf" target="_blank">
+        <a href="media/resume.pdf" target="_blank"
+          aria-label="Download Résumé as a PDF file">
           <span class="glyphicon glyphicon-open-file"></span> Download PDF
         </a>
       </div>
+
+
       <h3 class="resume--section col-xs-12">Work Experience</h3>
+
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text">Al Jaras</span>
+
+        <div class="resume--item-title"
+          aria-labelledby="rh1" role="heading">
+          <span id="rh1" class="resume--item-title-text">Al Jaras</span>
         </div>
-        <div class="resume--item-description col-xs-12">
+
+        <div class="resume--item-description col-xs-12"
+          aria-label="from August 2016 to the present day">
           08/2016 &ndash; Present
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Developed magazine social media platform using <strong>ReactJS</strong>,
           <strong>PHP</strong>, <strong>WordPress</strong>, <strong>Less</strong>,
           <strong>Progressive Web App</strong>, and <strong>Bootstrap</strong>.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Integrated with <strong>Google DFP</strong>, <strong>Analytics</strong>,
           <strong>Adsense</strong> and several advertising agencies.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Utilized <strong>Facebook Graph API</strong>,
           <strong>Twitter REST API</strong>, and <strong>Instagram API</strong>
           to automatically schedule posts from <strong>NodeJS</strong> when an
           article is published.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Met weekly deadlines with reliable, well-tested code, and presented
           results to full team remotely.
         </div>
+
       </div>
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text">247studios</span>
+
+        <div class="resume--item-title"
+          aria-labelledby="rh2" role="heading">
+          <span id="rh2" class="resume--item-title-text">247studios</span>
         </div>
-        <div class="resume--item-description col-xs-12">
+
+        <div class="resume--item-description col-xs-12"
+          aria-label="from June 2016 to the present day">
           06/2016 &ndash; Present
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Developed database management system on the web using <strong>PHP</strong>,
           <strong>HTML</strong>, and <strong>MySQL</strong> migrating workflow
           from spreadsheets.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Hired as freelance full stack developer to work alongside graphics
           designer.
         </div>
+
       </div>
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text" style="width: 201px;">
+
+        <div class="resume--item-title"
+          aria-labelledby="rh3" role="heading">
+          <span id="rh3" class="resume--item-title-text" style="width: 201px;">
             Bahrain Bayan School
           </span>
         </div>
-        <div class="resume--item-description col-xs-12">
-          09/2015 &ndash; 04/2016
-        </div>
+
         <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+          aria-label="from September 2016 until December 2016">
+          09/2016 &ndash; 12/2016
+        </div>
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Developed registration webapp for MUN conference using <strong>PHP</strong>,
           <strong>MySQL</strong>, <strong>Handlebars</strong>, <strong>HTML</strong>,
           and Javascript migrating workflow from printed forms.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Automated the correction of MUN resolutions eliminating the need for
           an academics team during the conference. (see <strong>Model Format</strong>)
         </div>
+
       </div>
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text" style="width: 163px;">
+
+        <div class="resume--item-title"
+          aria-labelledby="rh4" role="heading">
+          <span id="rh4" class="resume--item-title-text" style="width: 163px;">
             Events À La Carte
           </span>
         </div>
-        <div class="resume--item-description col-xs-12">
+
+        <div class="resume--item-description col-xs-12"
+          aria-label="from September 2015 until April 2016">
           09/2015 &ndash; 04/2016
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Developed database management system using <strong>Java</strong> and
           <strong>Microsoft SQL</strong> which generates quotations, invoices,
           and receipts as <strong>PDF</strong>.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Implemented website design plan made by 247studios using <strong>PHP</strong>,
           <strong>HTML</strong>, <strong>CSS</strong>, and <strong>MySQL</strong>.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Queried <strong>Instagram API</strong> to create a webapp that creates
           a dynamic slideshow using <strong>Javascript</strong> and <strong>NodeJS</strong>.
         </div>
+
       </div>
+
+
       <h3 class="resume--section col-xs-12">Personal Projects</h3>
+
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text">Model Format</span>
+
+        <div class="resume--item-title"
+          aria-labelledby="rh5" role="heading">
+          <span id="rh5" class="resume--item-title-text">Model Format</span>
         </div>
-        <div class="resume--item-description col-xs-12">
+
+        <div class="resume--item-description col-xs-12"
+          aria-label="from April 2016 to the present day">
           04/2016 &ndash; Present
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Formulated and implemented lexical analysis algorithm that assess and
           formats MUN resolutions using <strong>NodeJS</strong>, <strong>RegEx</strong>,
           and <strong>Open Office</strong>.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Rewrote registration website used in Bayan School’s MUN to serve any
           conference, using <strong>NodeJS</strong>, <strong>ReactJS</strong>,
           <strong>Less</strong>, <strong>Bootstrap</strong>, and <strong>Javascript</strong>.
         </div>
+
       </div>
-      <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
+
+      <div class="resume--item col-xs-12"
+        aria-labelledby="rh6" role="heading">
+
+        <div id="rh6" class="resume--item-title">
           <span class="resume--item-title-text">Sentigator</span>
         </div>
-        <div class="resume--item-description col-xs-12">
-          01/2017 &ndash; 01/2017
-        </div>
+
         <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+          aria-label="during January 2017">
+          01/2017
+        </div>
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Released <strong>open source</strong> social media and news
           aggregation website with 3 other developers.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Follows social trends by analyzing sentiment of tweets using
           <strong>Twitter API</strong>, collecting relevant news using
           <strong>News API</strong> using <strong>NodeJS</strong> and
           <strong>MongoDB</strong>.
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Specifically designed and developed frontend to display the data using
           <strong>ReactJS</strong>, <strong>Typescript</strong>,
           <strong>ChartJS</strong>, <strong>Less</strong>,
           <strong>Bootstrap</strong>, and <strong>HTML</strong>.
         </div>
+
       </div>
+
       <div class="resume--item col-xs-12">
-        <div class="resume--item-title">
-          <span class="resume--item-title-text">IO Reboot</span>
+
+        <div class="resume--item-title"
+          aria-labelledby="rh7" role="heading">
+          <span id="rh7" class="resume--item-title-text">IO Reboot</span>
         </div>
-        <div class="resume--item-description col-xs-12">
+
+        <div class="resume--item-description col-xs-12"
+          aria-label="from October 2015 until July 2016">
           10/2015 &ndash; 07/2016
         </div>
-        <div class="resume--item-description col-xs-12"
-          style="color: #666; padding-top: 20px;">
+
+        <div class="resume--item-description resume--item-light col-xs-12">
           Developed <strong>open source</strong> android puzzle game from
           algorithm idea that procedurally generates levels infinitely with
           increasing difficulty using <strong>C#</strong> in <strong>Unity 3D</strong>.
         </div>
+
         <a class="resume--item-description"
           href="https://play.google.com/store/apps/details?id=omarchehab.io">
           <img src="media/google-play-badge.png" alt="Get it on Google Play"
             width="150px" style="padding-top: 30px;"/>
         </a>
+
       </div>
-    </div>
+
+    </div><!-- /RESUME -->
+
+
 
     <!-- 3) PORTFOLIO -->
     <div id="portfolio" class="col-xs-12 text-center">
       Have not gotten around to this yet. Sorry!
-    </div>
+    </div><!-- /PORTFOLIO -->
+
+
 
     <!-- 4) CONTACT -->
     <div id="contact" class="col-xs-12 text-center">
+
       <p>Hello! Thank you for your interest in my experience. If you would like
         to contact me for any reason, shoot me an email at</p>
-      <div><img src="media/email.png"></div>
+
+      <div>
+        <img src="media/email.png"
+          aria-label="Personal email address as an image, sorry for the inconvenience.">
+      </div>
+
       <div><small>email is an image to avoid pesky crawlers picking it up</small></div>
-    </div>
+
+    </div><!-- /CONTACT -->
+
   </div>
-  <link rel="stylesheet" href="css/bundle.min.css" />
+
   <script src="js/bundle.min.js"></script>
 </body>
 </html>

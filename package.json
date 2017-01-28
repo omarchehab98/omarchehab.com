@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build-live": "nodemon -e js,less -w src -x 'npm run build'",
-    "build": "npm run build-js && npm run build-less",
+    "build": "npm run build-js && npm run build-css",
     "build-js": "browserify -t [ babelify --presets [ es2015 ] ] -d -p [ minifyify --map bundle.js.map --output js/bundle.js.map ] src/js/index.js > js/bundle.min.js",
-    "build-less": "lessc src/less/index.less | uglifycss > css/bundle.min.css"
+    "build-css": "lessc src/less/index.less | uglifycss > css/bundle.min.css"
   },
   "repository": {
     "type": "git",
