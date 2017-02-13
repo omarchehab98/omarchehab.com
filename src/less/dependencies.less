@@ -1,2 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
-@import '@{node_modules}/bootstrap/less/bootstrap';
+
+@node_modules: '../../node_modules';
+
+@bootstrap: '@{node_modules}/bootstrap/less';
+// Core variables and mixins
+@import "@{bootstrap}/variables.less";
+@import "@{bootstrap}/mixins.less";
+
+// Reset and dependencies
+@import "@{bootstrap}/normalize.less";
+@import "@{bootstrap}/print.less";
+@import "@{bootstrap}/glyphicons.less";
+
+// Core CSS
+@import "@{bootstrap}/scaffolding.less";
+@import "@{bootstrap}/grid.less";

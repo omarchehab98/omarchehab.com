@@ -5,43 +5,12 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   font-weight: 300;
-}
-
-#loading {
-  color: #fff;
-  font-size: 3rem;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-
-  opacity: 0;
-  animation: loading 3s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes loading {
-  10% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  66% {
-    top: 50%;
-    opacity: 1;
-  }
-  100% {
-    top: 45%;
-    opacity: 0;
-  }
+  color: white;
+  background-color: @darker-blue;
 }
 
 #sections {
-  opacity: 0;
-  animation: loading--finished 4s;
+  animation: loading--finished 1.25s;
   animation-fill-mode: forwards;
 }
 
@@ -49,7 +18,7 @@ body {
   0% {
     opacity: 0;
   }
-  75% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -59,8 +28,8 @@ body {
 
 #navigation {
   display: flex;
-  color: #ddd;
-  background-color: #568;
+  color: @light-gray;
+  background-color: @dark-blue;
   text-align: center;
   transition: top 1s;
 }
@@ -78,49 +47,50 @@ body {
 
   &,
   &:visited {
-    color: #96a3bd;
+    color: @grayish-blue;
   }
 
   &:hover {
-    color: #ddd;
+    color: @light-gray;
     text-decoration: none;
   }
 
   &.active,
   &:active {
-    color: #fff;
+    color: white;
     text-decoration: none;
   }
 
 }
 
 #profile {
-  background-color: #eee;
+  background-color: @lighter-gray;
   padding-top: 30px;
   padding-bottom: 30px;
   transition: top 1s;
 }
 
 #profile--name {
-  color: #333;
+  color: @darker-gray;
   text-align: center;
   font-weight: 300;
 }
 
 .profile--item {
-  color: #666;
+  color: @dark-gray;
   font-weight: 400;
   text-align: center;
 }
 
 #resume {
-  background-color: #eee;
+  color: black;
+  background-color: @lighter-gray;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .resume--item {
-  color: #333;
+  color: @darker-gray;
   text-align: center;
   padding: 10px 0;
   margin-bottom: 35px;
@@ -142,7 +112,7 @@ body {
   z-index: 1;
 
   &:before {
-    background-color: #a61c00;
+    background-color: @dark-red;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -154,8 +124,8 @@ body {
 }
 
 .resume--item-title-text {
-  color: #a61c00;
-  background-color: #eee;
+  color: @dark-red;
+  background-color: @lighter-gray;
   position: absolute;
   top: 0;
   left: 50%;
@@ -172,18 +142,20 @@ body {
 }
 
 .resume--item-light {
-  color: #666;
+  color: @dark-gray;
   padding-top: 20px;
 }
 
 #portfolio {
-  background-color: #eee;
+  color: black;
+  background-color: @lighter-gray;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 #contact {
-  background-color: #eee;
+  color: black;
+  background-color: @lighter-gray;
   padding-top: 30px;
   padding-bottom: 30px;
 }

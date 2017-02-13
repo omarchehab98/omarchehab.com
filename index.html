@@ -9,7 +9,17 @@
       initial-scale=1,
       maximum-scale=1,
       user-scalable=no"/>
-  <link rel="stylesheet" href="css/bundle.min.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#556688">
+  <meta name="apple-mobile-web-app-title" content="Omar Chehab">
+  <meta name="application-name" content="Omar Chehab">
+  <meta name="theme-color" content="#eeeeee">
+
+  <link rel="stylesheet" href="/dist/css/bundle.min.css" />
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,12 +29,7 @@
     ga('send', 'pageview');
   </script>
 </head>
-<body style="background-color: #223;">
-
-  <div id="loading" aria-label="Hello, the page is loading.">
-    Hello
-  </div>
-
+<body>
 
   <!-- SECTIONS -->
   <div id="sections">
@@ -41,7 +46,7 @@
       <div class="profile--item">
 
         <a aria-label="Git Hub" href="https://github.com/omarchehab98">
-          <img width="36px" src="media/octocat.png" alt="Octocat">
+          <img width="36px" src="/dist/media/octocat.png" alt="Octocat">
           <span style="display: inline-block;width: 100%;">GitHub</span>
         </a>
 
@@ -90,7 +95,7 @@
     <div id="resume" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 
       <div class="resume--item col-xs-12" style="margin: 0;">
-        <a href="media/resume.pdf" target="_blank"
+        <a href="/dist/media/resume.pdf" target="_blank"
           aria-label="Download Résumé as a PDF file">
           <span class="glyphicon glyphicon-open-file"></span> Download PDF
         </a>
@@ -274,7 +279,7 @@
 
         <a class="resume--item-description"
           href="https://play.google.com/store/apps/details?id=omarchehab.io">
-          <img src="media/google-play-badge.png" alt="Get it on Google Play"
+          <img src="/dist/media/google-play-badge.png" alt="Get it on Google Play"
             width="150px" style="padding-top: 30px;"/>
         </a>
 
@@ -308,6 +313,6 @@
 
   </div>
 
-  <script src="js/bundle.min.js"></script>
+  <script src="/dist/js/bundle.min.js"></script>
 </body>
 </html>

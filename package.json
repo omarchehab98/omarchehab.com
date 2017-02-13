@@ -4,10 +4,10 @@
   "description": "for github pages",
   "main": "index.js",
   "scripts": {
-    "build-live": "nodemon -e js,less -w src -x 'npm run build'",
-    "build": "npm run build-js && npm run build-css",
-    "build-js": "browserify -t [ babelify --presets [ es2015 ] ] -d -p [ minifyify --map bundle.js.map --output js/bundle.js.map ] src/js/index.js > js/bundle.min.js",
-    "build-css": "lessc src/less/index.less | uglifycss > css/bundle.min.css"
+    "build": "npm run build-js && npm run build-sw && npm run build-css",
+    "build-js": "browserify -t [ babelify --presets [ es2015 ] ] -d -p [ minifyify --map bundle.js.map --output dist/js/bundle.js.map ] src/js/index.js > dist/js/bundle.min.js",
+    "build-sw": "browserify -t [ babelify --presets [ es2015 ] ] -d -p [ minifyify --map sw.js.map --output sw.js.map ] src/js/sw.js > sw.min.js",
+    "build-css": "lessc src/less/index.less | uglifycss > dist/css/bundle.min.css"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "browserify": "^13.3.0",
     "less": "^2.7.2",
     "minifyify": "^7.3.4",
-    "nodemon": "^1.11.0",
     "uglifycss": "0.0.25"
   }
 }

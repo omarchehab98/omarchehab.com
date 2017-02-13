@@ -1,4 +1,15 @@
-window.onload = function() {
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.min.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
+window.addEventListener('load', function() {
+  
   const navigation = {
     profile: document.getElementById('navigation--profile'),
     resume: document.getElementById('navigation--resume'),
@@ -113,4 +124,4 @@ window.onload = function() {
   sections.prepareStyle('contact')
 
   navigation.profile.click()
-};
+});
