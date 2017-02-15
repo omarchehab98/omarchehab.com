@@ -26,6 +26,3 @@ To build the Javascript
 
 To build the CSS
 * `npm run build-css`
-
-To automatically build
-* `npm run build-live`
