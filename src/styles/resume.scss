@@ -1,0 +1,63 @@
+#resume {
+  color: black;
+  background-color: $lighter-gray;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.resume--item {
+  color: $darker-gray;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 35px;
+}
+
+.resume--section {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.resume--item-title {
+  position: relative;
+  height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &:before {
+    background-color: $dark-red;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 90%;
+    height: 1px;
+    content: '';
+  }
+}
+
+.resume--item-title-text {
+  color: $dark-red;
+  background-color: $lighter-gray;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.resume--item-description {
+  display: block;
+  font-weight: 300;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.resume--item-light {
+  color: $dark-gray;
+  padding-top: 20px;
+}
