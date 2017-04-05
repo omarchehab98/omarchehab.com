@@ -25,23 +25,13 @@ window.addEventListener('load', function() {
 			const navigationHeight = sections.navigation.offsetHeight
 			const profileTop = (viewportHeight - profileHeight - navigationHeight) / 2
 			sections.profile.style.top = `${profileTop}px`
-			sections.navigation.style.top = `initial`
-			sections.navigation.style.bottom = `calc(100vh - ${navigationHeight}px)`
-			setTimeout(() => {
-				sections.navigation.style.top = `initial`
-				sections.navigation.style.bottom = `0`
-			}, 10)
+			sections.navigation.style.top = `calc(100vh - ${navigationHeight}px)`
 		},
 		hideProfile: function() {
 			const profileHeight = sections.profile.offsetHeight
 			const navigationHeight = sections.navigation.offsetHeight
 			sections.profile.style.top = `-${profileHeight}px`
-			sections.navigation.style.top = `initial`
-			sections.navigation.style.bottom = `calc(100vh - ${navigationHeight}px)`
-			setTimeout(() => {
-				sections.navigation.style.top = `0`
-				sections.navigation.style.bottom = `initial`
-			}, 1000)
+			sections.navigation.style.top = `0`
 		},
 		navigation: document.getElementById('navigation'),
 		show: function(page) {
