@@ -3,7 +3,8 @@
   color: $light-gray;
   background-color: $dark-blue;
   text-align: center;
-  transition: transform 1s;
+  transition: bottom 1s, top 1s;
+  z-index: 2;
 }
 
 .navigation--item {
