@@ -1,0 +1,42 @@
+#navigation {
+  display: flex;
+  color: $light-gray;
+  background-color: $dark-blue;
+  text-align: center;
+  z-index: 2;
+}
+
+.navigation--item {
+  flex-grow: 1;
+  padding: 4px 0px;
+  text-decoration: none;
+
+  svg,
+  img {
+    display: block;
+    margin: 4px auto;
+  }
+
+  &,
+	&:visited {
+    color: $grayish-blue;
+  }
+
+	&:hover,
+	&:focus {
+    color: $light-gray;
+    text-decoration: none;
+		svg {
+			fill: $light-gray;
+		}
+  }
+
+  &.active,
+  &:active {
+    color: white;
+    text-decoration: underline;
+		svg {
+			fill: white;
+		}
+  }
+}

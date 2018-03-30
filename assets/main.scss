@@ -1,0 +1,24 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import 'variables';
+@import 'navigation';
+@import 'card';
+@import 'page';
+@import 'profile';
+@import 'resume';
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #333333;
+  background-color: $darker-blue;
+}
