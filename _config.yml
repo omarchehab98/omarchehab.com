@@ -13,7 +13,7 @@ email: omarchehab98@gmail.com
 description: Hello, I'm Omar Chehab! I am a frontend web developer by day and hacker
   by night. I founded ManageMUN with the vision to improve MUNs. I work part-time
   at Flute Systems and Al Jaras.
-baseurl: ''
+baseurl: 
 url: https://omarchehab.com
 markdown: kramdown
 theme: minima
