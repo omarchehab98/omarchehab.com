@@ -1,26 +1,31 @@
+---
 title: Omar Chehab
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 author: Omar Chehab
 email: omarchehab98@gmail.com
-description: >-
-  Hello, I'm Omar Chehab! I am a frontend web developer by day and hacker by night.
-  I founded ManageMUN with the vision to improve MUNs. I work part-time at
-  Flute Systems and Al Jaras.
-baseurl: ""
-url: "https://omarchehab.com"
-
+description: Hello, I'm Omar Chehab! I am a frontend web developer by day and hacker
+  by night. I founded ManageMUN with the vision to improve MUNs. I work part-time
+  at Flute Systems and Al Jaras.
+baseurl: ''
+url: https://omarchehab.com
 markdown: kramdown
 theme: minima
 plugins:
-  - jekyll-feed
-
+- jekyll-feed
 sass:
   sass_dir: _sass
-
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+- Gemfile
+- Gemfile.lock
+- node_modules
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
