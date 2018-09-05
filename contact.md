@@ -5,7 +5,7 @@ layout: card
 
 Hello, I'm Omar Chehab, a frontend web developer by day and hacker by night.
 
-I founded ManageMUN with the vision to improve MUNs. I currently work part-time at Flute Systems and Al Jaras. Oh, I'm also a full time student at U of T.
+I founded ManageMUN with the vision to improve MUNs. I currently work part-time at Al Jaras. Oh, I'm also a full time student at U of T.
 
 I enjoy debating at Model United Nations and being sleep deprived at Hackathons.
 
