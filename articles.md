@@ -2,6 +2,7 @@
 title: Articles
 layout: page
 ---
+
 <h1>
 	Articles
 	<a

@@ -1,7 +1,8 @@
 ---
 title: Netlify Site with Wildcard Subdomain
 date: 2018-09-05 01:54:00 Z
-description: "Omar Chehab: Hello, is it possible to configure a Site to serve on a wildcard subdomain?"
+description: 'Omar Chehab: Hello, is it possible to configure a Site to serve on a
+  wildcard subdomain?'
 layout: page-article
 ---
 
