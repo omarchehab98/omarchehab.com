@@ -1,6 +1,7 @@
 ---
 title: Resume
 layout: page
+description: Omar Chehab's resume.
 ---
 
 <object class="resume" data="/assets/resume.pdf" type="application/pdf">
