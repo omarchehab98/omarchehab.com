@@ -1,6 +1,6 @@
 #card {
 	position: absolute;
-	top: 50%;
+	top: calc(50% + #{$nav-height / 2});
 	transform: translateY(-50%);
   background-color: $grey-color-lighter;
   padding-top: 20px;
