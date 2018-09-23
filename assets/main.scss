@@ -9,16 +9,10 @@
 @import "bootstrap/scaffolding";
 @import "bootstrap/grid";
 @import 'variables';
+@import 'base';
 @import 'navigation';
 @import 'card';
 @import 'page';
 @import 'profile';
 @import 'resume';
-
-body {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: #333333;
-  background-color: $darker-blue;
-}
+@import 'syntax-highlighting';

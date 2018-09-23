@@ -1,7 +1,7 @@
 #navigation {
   display: flex;
-  color: $light-gray;
-  background-color: $dark-blue;
+  color: $grey-color-light;
+  background-color: $dark-blue-color;
   text-align: center;
   z-index: 2;
 }
@@ -19,15 +19,15 @@
 
   &,
 	&:visited {
-    color: $grayish-blue;
+    color: $grayish-blue-color;
   }
 
 	&:hover,
 	&:focus {
-    color: $light-gray;
+    color: $grey-color-light;
     text-decoration: none;
 		svg {
-			fill: $light-gray;
+			fill: $grey-color-light;
 		}
   }
 
