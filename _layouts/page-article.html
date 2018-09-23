@@ -6,16 +6,25 @@
 <body>
 	{% include header.html %}
 
-	<main id="page"
+
+	<div id="page"
 		class="col-xs-12
 			col-sm-10 col-sm-offset-1
 			col-md-8 col-md-offset-2
 			col-lg-6 col-lg-offset-3">
-		<h1>{{ page.title }}</h1>
-		<p style="font-weight: bold;">Written {{ page.date | timeago }}</p>
+		<main>
+			<h1>{{ page.title }}</h1>
+			<p style="font-weight: bold;">Written {{ page.date | timeago }}</p>
 
-		{{ content }}
-	</main>
+			{{ content }}
+		</main>
+
+		<h1>Other Articles</h1>
+
+		{% for post in site.posts limit:6 %}
+			{% include article-preview.html post=post %}
+		{% endfor %}
+	</div>
 
   {% include footer.html %}
 </body>

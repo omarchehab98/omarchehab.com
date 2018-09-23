@@ -1,7 +1,7 @@
 ---
 title: Hack The Valley 2 Workshops
 date: 2018-02-24 00:00:00 Z
-description: Hack The Valley 2 Web Sockets and System Administration workshop slides.
+description: I hosted two workshops at Hack The Valley 2, UTSC's second annual hackathon.
 layout: page-article
 ---
 

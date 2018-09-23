@@ -1,12 +1,13 @@
 ---
 title: Netlify Site with Wildcard Subdomain
 date: 2018-09-05 01:54:00 Z
+description: "Omar Chehab: Hello, is it possible to configure a Site to serve on a wildcard subdomain?"
 layout: page-article
 ---
 
 > Omar Chehab: Hello, is it possible to configure a Site to serve on a wildcard subdomain?
 
-> Chris from Netlify: Sure.  This is a paid feature, so the steps to do it are:
+> Chris from Netlify: Sure. This is a paid feature, so the steps to do it are:
 >
 > 1. sign up for a pro team and move your sites over to it as described here: https://www.netlify.com/docs/teams/
 >

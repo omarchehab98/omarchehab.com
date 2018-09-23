@@ -2,11 +2,10 @@
 title: Articles
 layout: page
 ---
+# Articles
 
-<ul>
-{% for post in site.posts %}
-	<li>
-		<a href="{{ post.url }}">{{ post.title }}</a>
-	</li>
-{% endfor %}
-</ul>
+<div>
+	{% for post in site.posts %}
+		{% include article-preview.html post=post %}
+	{% endfor %}
+</div>

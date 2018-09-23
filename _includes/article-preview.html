@@ -1,0 +1,19 @@
+<article style="margin-bottom: 50px;">
+	<h2 style="margin-bottom: 0;">
+		<a href="{{ post.url }}" style="text-decoration: none">
+		{{ post.title }}
+		</a>
+	</h2>
+
+	<p>
+		written {{ post.date | timeago }}
+	</p>
+
+	<blockquote>
+		{{ post.description }}
+	</blockquote>
+
+	<a href="{{post.url}}">
+		Read more
+	</a>
+</article>
