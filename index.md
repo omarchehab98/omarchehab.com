@@ -18,10 +18,6 @@ layout: card
 		<img width="36" src="/assets/logo-github.svg" alt="GitHub Logo">
 		<span>GitHub</span>
 	</a>
-	<a class="profile--link" aria-label="Dev Post" href="https://devpost.com/omarchehab98" target="_blank" rel="noopener">
-		<img width="36" src="/assets/logo-devpost.svg" alt="DevPost Logo">
-		<span>Devpost</span>
-	</a>
 	<a class="profile--link" aria-label="Send email" href="mailto:{{site.email}}">
 		<img width="36" src="/assets/logo-gmail.svg" alt="G Mail Logo">
 		<span>Mail</span>
