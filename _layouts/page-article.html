@@ -21,8 +21,10 @@
 
 		<h1>Other Articles</h1>
 
-		{% for post in site.posts limit:6 %}
-			{% include article-preview.html post=post %}
+		{% for post in site.posts limit:11 %}
+      {% if post.url != page.url %}
+				{% include article-preview.html post=post %}
+			{% endif %}
 		{% endfor %}
 	</div>
 
