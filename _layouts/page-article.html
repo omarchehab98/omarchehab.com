@@ -18,7 +18,12 @@
 
 			{{ content }}
 		</main>
-
+		
+		<h1>Discussion</h1>
+		
+		<div id="commento"></div>
+		<script src="https://cdn.commento.io/js/commento.js"></script>
+		
 		<h1>Other Articles</h1>
 
 		{% for post in site.posts limit:11 %}
