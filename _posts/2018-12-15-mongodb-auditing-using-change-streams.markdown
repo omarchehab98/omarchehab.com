@@ -1,5 +1,5 @@
 ---
-title: MongoDB Auditing using Change Streams
+title: MongoDB Auditing Documents using Change Streams
 date: 2018-12-15 02:44:00 Z
 description: Versioning documents in MongoDB by listening to changes using the change
   streams listener. It's ideal for audit logs or auditing.
@@ -12,7 +12,7 @@ If you are using [MongoDB Enterprise](https://www.mongodb.com/products/mongodb-e
 >
 > *[https://docs.mongodb.com/manual/core/auditing](https://docs.mongodb.com/manual/core/auditing/)*
 
-Yes, [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) issues Enterprise instances.
+Yes, [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) issues Enterprise instances, you can enable Auditing from the Security tab.
 
 If you do not use MongoDB Enterprise, then you can implement auditing using [change streams](https://docs.mongodb.com/manual/changeStreams/).
 
@@ -55,3 +55,19 @@ function handleChange(event) {
 
 changeStream.on('change', handleChange);
 ```
+
+> WARNING:
+> *Enabling Audit authorization successes can severely impact cluster performance. Enable this option with caution.*
+>
+> *[https://docs.atlas.mongodb.com/database-auditing/](https://docs.atlas.mongodb.com/database-auditing/)*
+
+With our solution above, we can expect the same degradation because we would be creating a document every time we insert, update, or delete a document.
+
+If real-time auditing is not a requirement, then we can buffer our logs and insert them using [`insertMany`]() in bulk. We can achieve this using the [DataBuffer](/2018/12/15/javascript-data-buffer) data structure.
+
+```js
+const dataBuffer = new DataBuffer({ size: 100 });
+dataBuffer.on('flush', db.collection('audit').insertMany);
+```
+
+Next, in our `handleChange` function replace the expression `db.collection('audit').insertOne` with `dataBuffer.insert`.
