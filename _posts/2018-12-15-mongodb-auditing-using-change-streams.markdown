@@ -37,24 +37,18 @@ const changeStream = db.collection('...').watch(watchOptions);
 // of operation types.
 // We are only watching document related changes.
 const auditOperationTypes = new Set(['insert', 'replace', 'update', 'delete']);
-function handleChange({
-    ns,
-    operationType,
-    documentKey,
-    fullDocument,
-    updateDescription,
-}) {
-    if (ns.coll !== 'audit' && auditOperationTypes.has(operationType)) {
+function handleChange(event) {
+    if (event.ns.coll !== 'audit' && auditOperationTypes.has(event.operationType)) {
         db.collection('audit').insertOne({
-            model: ns.coll,
-            operation: operationType,
+            model: event.ns.coll,
+            operation: event.operationType,
             // If it's a delete, then fullDocument is undefined use the
             // documentKey instead, which is { _id: ... }
-            document: fullDocument || documentKey,
+            document: event.fullDocument || event.documentKey,
             // If it's an update and we are not storing the full document,
             // then store the updateDescription.
             // Otherwise, default to undefined.
-            updateDescription: !fullDocument && updateDescription || undefined,
+            updateDescription: !event.fullDocument && event.updateDescription || undefined,
         });
     }
 }
