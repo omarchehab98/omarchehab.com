@@ -63,7 +63,7 @@ changeStream.on('change', handleChange);
 
 With our solution above, we can expect the same degradation because we would be creating a document every time we insert, update, or delete a document.
 
-If real-time auditing is not a requirement, then we can buffer our logs and insert them using [`insertMany`](https://docs.mongodb.com/manual/reference/method/db.collection.insertMany) in bulk. We can achieve this using the [DataBuffer](/2018/12/15/javascript-data-buffer) data structure.
+If real-time auditing is not a requirement, then we can buffer our logs and insert them using [`insertMany`](https://docs.mongodb.com/manual/reference/method/db.collection.insertMany) in bulk. We can achieve this using the [DataBuffer](/2018/12/15/javascript-data-buffer.html) data structure.
 
 ```js
 const dataBuffer = new DataBuffer({ size: 100 });
