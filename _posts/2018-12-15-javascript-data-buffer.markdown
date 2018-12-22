@@ -46,7 +46,7 @@ class DataBuffer extends EventEmitter {
 ## Usage
 
 ```js
-const dataBuffer = DataBuffer({ size: 5 });
+const dataBuffer = new DataBuffer({ size: 5 });
 dataBuffer.on('flush', console.log);
 
 dataBuffer.insert('one');
