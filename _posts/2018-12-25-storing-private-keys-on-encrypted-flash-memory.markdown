@@ -22,6 +22,33 @@ I created a 4MB [VeraCrypt](https://github.com/veracrypt/VeraCrypt) container an
 
 Finally, I wrote a script to decrypt the container using the VeraCrypt CLI, add the SSH key to the agent for a limited time, and unmount the device. I store the script outside of the VeraCrypt container for convenience.
 
-```
-# TODO: Copy script from my flash memory onto here
+```sh
+#!/usr/bin/env bash
+# Directory the script is stored in (we know this is the root directory of the flash memory)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+# Directory we will mount the decrypted VeraCrypt container to.
+DIRD="${DIR}d"
+# File path to the SSH private key.
+KEY="$DIRD/id_rsa"
+
+TIME="$1"
+if [ -z "$TIME" ]; then
+  TIME="8h"
+fi
+
+echo "Requesting password to decrypt '$DIR/keys' to mount onto '$DIRD'" && \
+    veracrypt -m ro "$DIR/keys" "$DIRD" && \
+
+    # Delete all identities from agent
+    ssh-add -D && \
+
+    # For some reason the file permissions of files in the container cannot be changed. So, ssh-add refuses to read from the file directly because the permissions are too open.
+    # So I came up with this hack to workaround it.
+    ssh-add -t "$TIME" - < "$KEY" && \
+
+    # Unmount the decrypted container
+    veracrypt -d "$DIRD" && \
+
+    # Unmount the device
+    diskutil unmount force "$DIR"
 ```
