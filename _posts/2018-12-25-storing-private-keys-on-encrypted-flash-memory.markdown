@@ -42,7 +42,9 @@ echo "Requesting password to decrypt '$DIR/keys' to mount onto '$DIRD'" && \
     # Delete all identities from agent
     ssh-add -D && \
 
-    # For some reason the file permissions of files in the container cannot be changed. So, ssh-add refuses to read from the file directly because the permissions are too open.
+    # For some reason the file permissions of files in the container cannot be
+    # changed. So, ssh-add refuses to read from the file directly because the
+    # permissions are too open.
     # So I came up with this hack to workaround it.
     ssh-add -t "$TIME" - < "$KEY" && \
 
