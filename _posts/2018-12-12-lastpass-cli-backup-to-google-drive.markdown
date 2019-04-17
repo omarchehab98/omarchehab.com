@@ -9,7 +9,7 @@ layout: page-article
     mkdir -p ~/GDrive/Backups/LastPass/`date +%Y/%m/%d` && \
       lpass export | \
       gpg -er omarchehab98@gmail.com > \
-      ~/GDrive/Backups/LastPass/`date +%Y/%m/%d`/lpass-`date -Iseconds`.gpg
+      ~/GDrive/Backups/LastPass/`date +%Y/%m/%d`/lpass-`date -u +%Y-%m-%dT%H:%M:%S`.gpg
 
 # Explained
 
