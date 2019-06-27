@@ -3,7 +3,7 @@ title: Contact
 layout: card
 ---
 
-Hello, I'm Omar Chehab, a student by day and a software engineer by night. I'm a third year undergraduate Computer Science student at the [University of Toronto](https://www.utoronto.ca) specialising in Software Engineering.
+Hello, I'm Omar Chehab, a student by day and a software engineer by night. I'm a fourth year undergraduate Computer Science student at the [University of Toronto](https://www.utoronto.ca) specialising in Software Engineering.
 
 I enjoy debating at Model United Nations and being sleep deprived at Hackathons.
 
