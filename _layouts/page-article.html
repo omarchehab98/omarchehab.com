@@ -17,22 +17,5 @@
 			<p style="font-weight: bold;">Written {{ page.date | timeago }}</p>
 
 			{{ content }}
-		</main>
-		
-		<h1>Other Articles</h1>
+</div>
 
-		{% for post in site.posts limit:4 %}
-      {% if post.url != page.url %}
-				{% include article-preview.html post=post %}
-			{% endif %}
-		{% endfor %}
-		
-		<h1>Discussion</h1>
-		
-		<div id="commento"></div>
-		<script src="https://cdn.commento.io/js/commento.js"></script>
-	</div>
-
-  {% include footer.html %}
-</body>
-</html>

@@ -2,22 +2,22 @@
 	position: absolute;
 	top: calc(50% + #{$nav-height / 2});
 	transform: translateY(-50%);
-  background-color: $grey-color-lighter;
-  padding-top: 20px;
-  padding-bottom: 20px;
+	background-color: $grey-color-lighter;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	animation: fadeInUp 1.25s ease-in-out 0s forwards;
 	animation-delay: 0.5s;
 	opacity: 0;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(calc(-50% + 100px));
-  }
+	from {
+		opacity: 0;
+		transform: translateY(calc(-50% + 100px));
+	}
 
-  to {
-    opacity: 1;
-    transform: translateY(-50%);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(-50%);
+	}
 }

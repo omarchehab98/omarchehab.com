@@ -1,42 +1,45 @@
 #navigation {
-  display: flex;
-  color: $grey-color-light;
-  background-color: $dark-blue-color;
-  text-align: center;
-  z-index: 2;
+	display: flex;
+	color: $grey-color-light;
+	background-color: $dark-blue-color;
+	text-align: center;
+	z-index: 2;
 }
 
 .navigation--item {
-  flex-grow: 1;
-  padding: 4px 0px;
-  text-decoration: none;
+	flex-grow: 1;
+	padding: 4px 0px;
+	text-decoration: none;
+	cursor: pointer;
 
-  svg,
-  img {
-    display: block;
-    margin: 4px auto;
-  }
+	object,
+	img {
+		display: block;
+		margin: 4px auto;
+		width: 32px;
+		height: 32px;
+	}
 
-  &,
+	&,
 	&:visited {
-    color: $grayish-blue-color;
-  }
+		color: $grayish-blue-color;
+	}
 
 	&:hover,
 	&:focus {
-    color: $grey-color-light;
-    text-decoration: none;
+		color: $grey-color-light;
+		text-decoration: none;
 		svg {
 			fill: $grey-color-light;
 		}
-  }
+	}
 
-  &.active,
-  &:active {
-    color: white;
-    text-decoration: underline;
+	&.active,
+	&:active {
+		color: white;
+		text-decoration: underline;
 		svg {
 			fill: white;
 		}
-  }
+	}
 }
