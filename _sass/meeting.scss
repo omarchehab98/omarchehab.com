@@ -1,0 +1,68 @@
+.meeting {
+
+	&--row {
+		display: flex;
+	}
+
+	&--column {
+		flex-grow: 1;
+		width: 0;
+
+		&-day {
+			&:nth-child(odd) {
+				.meeting--entry-free {
+					background-color: lightblue;
+				}
+			}
+
+			&:nth-child(even) {
+				.meeting--entry-free {
+					background-color: lightsteelblue;
+				}
+			}
+		}
+	}
+
+	&--header {
+		text-align: center;
+		font-weight: bold;
+	}
+
+	&--timezone {
+		text-align: right;
+		font-weight: normal;
+	}
+
+	&--gutter {
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+		padding-right: 4px;
+		box-sizing: border-box;
+		font-size: 12px;
+		height: 20px;
+		border-right: 1px solid lightgrey;
+
+		&:first-child {
+			margin-top: 10px;
+		}
+	}
+
+	&--entry {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 20px;
+		box-sizing: border-box;
+		border-bottom: 1px solid lightgrey;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&-free {
+			font-size: 10px;
+		}
+	}
+}

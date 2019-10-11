@@ -1,0 +1,94 @@
+---
+title: Meeting
+layout: page
+---
+
+{% assign events = "" | split: "" %}
+{% ical url: https://calendar.google.com/calendar/ical/omarchehab98%40gmail.com/public/basic.ics only_future: true %}
+  {% assign events = events | push: event %}
+{% endical %}
+
+{% assign hour_seconds = 3600 %}
+{% assign day_seconds = hour_seconds | times: 24 %}
+{% assign week_seconds = day_seconds | times: 7 %}
+
+{% assign weeks = 1 %}
+{% assign timezone = "EST" %}
+{% assign timezone_seconds = -4 | times: hour_seconds %}
+
+{% assign offset_seconds = week_seconds | times: weeks %}
+{% assign now = site.time | date: "%s" | plus: timezone_seconds %}
+{% assign start = now | divided_by: day_seconds | times: day_seconds %}
+{% assign start_day = site.time | date: "%w" %}
+{% assign end = start | plus: offset_seconds %}
+
+{% for i in (1..weeks) %}
+	{% assign week = i | minus: 1 %}
+	{% assign week_start = week | times: week_seconds | plus: start %}
+	<div class="meeting--row meeting--header">
+		<div class="meeting--column meeting--timezone">
+			{{ timezone }}
+		</div>
+		{%- for day in (0..6) -%}
+			<div class="meeting--column">
+				{%- assign day_of_week = start_day | plus: day | modulo: 7 -%}
+				{%- case day_of_week -%}{%- when 0 -%}Sun{%- when 1 -%}Mon{%- when 2 -%}Tue{%- when 3 -%}Wed{%- when 4 -%}Thu{%- when 5 -%}Fri{%- when 6 -%}Sat{%- endcase -%}
+			</div>
+		{%- endfor -%}
+	</div>
+	<div class="meeting--row">
+		<div class="meeting--column">
+			{% for hour in (1..23) %}
+				{% if hour < 12 %}{% assign ampm = "AM" %}{% else %}{% assign ampm = "PM" %}{% endif %}
+				{% assign hour12 = hour | minus: 1 | modulo: 12 | plus: 1 %}
+				<div class="meeting--gutter">
+					{{hour12}} {{ampm}}
+				</div>
+			{% endfor %}
+		</div>
+		{% for day in (0..6) %}
+			{% assign day_start = day | times: day_seconds | plus: week_start %}
+			<div class="meeting--column meeting--column-day">
+				{% for hour in (0..23) %}
+					{% assign hour_start = hour | times: hour_seconds | plus: day_start %}
+					{% assign hour_end = hour_start | plus: hour_seconds %}
+					{% assign is_free = true %}
+					{% if now > hour_start %}
+						{% assign is_free = false %}
+					{% else %}
+						{% for event in events %}
+							{% assign event_start = event.start_time | date: "%s" | plus: timezone_seconds %}
+							{% assign event_end = event.end_time | date: "%s" | plus: timezone_seconds %}
+							{% if hour_start > event_start and event_end > hour_end %}
+								{% assign is_free = false %}
+							{% endif %}
+							{% if hour_start <= event_start and event_end <= hour_end %}
+								{% assign is_free = false %}
+							{% endif %}
+							{% if hour_start <= event_start and event_start < hour_end %}
+								{% assign is_free = false %}
+							{% endif %}
+							{% if hour_start < event_end and event_end <= hour_end %}
+								{% assign is_free = false %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+
+					{% if hour < 12 %}{% assign from_ampm = "AM" %}{% else %}{% assign from_ampm = "PM" %}{% endif %}
+					{% assign from_hour12 = hour | modulo: 12 %}{% if from_hour12 == 0 %}{% assign from_hour12 = 12 %}{% endif %}
+
+					{% assign next_hour = hour | plus: 1 | modulo: 24 %}
+					{% if next_hour < 12 %}{% assign to_ampm = "AM" %}{% else %}{% assign to_ampm = "PM" %}{% endif %}
+					{% assign to_hour12 = next_hour | modulo: 12 %}{% if to_hour12 == 0 %}{% assign to_hour12 = 12 %}{% endif %}
+
+					{%- assign day_of_week = start_day | plus: day | modulo: 7 -%}
+					{%- capture day_of_week_str -%}{%- case day_of_week -%}{%- when 0 -%}Sunday{%- when 1 -%}Monday{%- when 2 -%}Tuesday{%- when 3 -%}Wednesday{%- when 4 -%}Thursday{%- when 5 -%}Friday{%- when 6 -%}Saturday{%- endcase -%}{% endcapture %}
+					<div
+						class="meeting--entry{% if is_free %} meeting--entry-free{% endif %}"
+						aria-label="{% if is_free %}free{%else%}busy{% endif %} on {{day_of_week_str}} from {{from_hour12}} {{from_ampm}} to {{to_hour12}} {{to_ampm}} {{timezone}}"
+					>{% if is_free %}{{from_hour12}} {{from_ampm}} - {{to_hour12}} {{to_ampm}}{% endif %}</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+{% endfor %}

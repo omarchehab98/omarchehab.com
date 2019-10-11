@@ -12,12 +12,13 @@ author: Omar Chehab
 email: omarchehab98@gmail.com
 description: Hello, I'm Omar Chehab! I am a front end web developer by day and hacker
   by night. I founded ManageMUN with the vision to improve MUNs.
-baseurl: 
+baseurl:
 url: https://omarchehab.com
 markdown: kramdown
 theme: minima
 plugins:
 - jekyll-feed
+- jekyll-ical-tag
 sass:
   sass_dir: _sass
 exclude:
