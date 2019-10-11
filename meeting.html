@@ -27,7 +27,7 @@ layout: page
 	{% assign week_start = week | times: week_seconds | plus: start %}
 	<div class="meeting--row meeting--header">
 		<div class="meeting--column meeting--timezone">
-			{{ timezone }}
+			{{ timezone }}&nbsp;
 		</div>
 		{%- for day in (0..6) -%}
 			<div class="meeting--column">
@@ -86,7 +86,7 @@ layout: page
 					<div
 						class="meeting--entry{% if is_free %} meeting--entry-free{% endif %}"
 						aria-label="{% if is_free %}free{%else%}busy{% endif %} on {{day_of_week_str}} from {{from_hour12}} {{from_ampm}} to {{to_hour12}} {{to_ampm}} {{timezone}}"
-					>{% if is_free %}{{from_hour12}} {{from_ampm}} - {{to_hour12}} {{to_ampm}}{% endif %}</div>
+					>{% if is_free %}{{from_hour12}}<span class="hidden-xs">&nbsp;{{from_ampm}}</span><span class="hidden-xs">&nbsp;</span>-<span class="hidden-xs">&nbsp;</span>{{to_hour12}}<span class="hidden-xs">&nbsp;{{to_ampm}}</span>{% endif %}</div>
 				{% endfor %}
 			</div>
 		{% endfor %}
