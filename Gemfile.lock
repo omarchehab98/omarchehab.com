@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/omarchehab98/jekyll-ical-tag.git
-  revision: 5bc4b2a8fbcd71be56064d2aaa95d515e04e33e4
+  remote: https://github.com/Rakefire/jekyll-ical-tag.git
+  revision: b8e3ea8e853c2bf225bb56a393da55392bf202b7
   specs:
     jekyll-ical-tag (1.0.4)
       activesupport
