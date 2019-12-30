@@ -18,6 +18,7 @@ layout: page
 
 {% assign offset_seconds = week_seconds | times: weeks %}
 {% assign now = site.time | date: "%s" | plus: timezone_seconds %}
+{% assign busy_until = hour_seconds | times: 16 | plus: now %}
 {% assign start = now | divided_by: day_seconds | times: day_seconds %}
 {% assign start_day = site.time | date: "%w" %}
 {% assign end = start | plus: offset_seconds %}
@@ -53,7 +54,7 @@ layout: page
 					{% assign hour_start = hour | times: hour_seconds | plus: day_start %}
 					{% assign hour_end = hour_start | plus: hour_seconds %}
 					{% assign is_free = true %}
-					{% if now > hour_start %}
+					{% if busy_until > hour_start %}
 						{% assign is_free = false %}
 					{% else %}
 						{% for event in events %}
