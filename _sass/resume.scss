@@ -42,4 +42,15 @@
 		color: #1155cc;
 		text-decoration: underline;
 	}
+
+	@media screen and (min-width: 768px) {
+		&-row {
+			display: flex;
+		}
+
+		&-col {
+			width: 0;
+			flex-grow: 1;
+		}
+	}
 }
