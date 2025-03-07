@@ -1,0 +1,9 @@
+[build]
+  command = "jekyll build"
+  publish = "_site"
+
+[build.environment]
+  RUBY_VERSION = "2.7.1"
+
+[[plugins]]
+  package = "netlify-plugin-jekyll-cache"
