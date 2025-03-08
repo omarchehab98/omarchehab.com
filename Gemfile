@@ -38,3 +38,6 @@ gem "html-proofer", "~> 3.19.0"
 
 # Required by Netlify
 gem "webrick", "~> 1.7"
+
+# Pin ffi to a version compatible with older RubyGems
+gem "ffi", "< 1.16.0"
