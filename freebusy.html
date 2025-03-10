@@ -13,12 +13,12 @@ layout: page
 {% assign week_seconds = day_seconds | times: 7 %}
 
 {% assign weeks = 1 %}
-{% assign timezone = "EST" %}
-{% assign timezone_seconds = -4 | times: hour_seconds %}
+{% assign timezone = "PST" %}
+{% assign timezone_seconds = -7 | times: hour_seconds %}
 
 {% assign offset_seconds = week_seconds | times: weeks %}
 {% assign now = site.time | date: "%s" | plus: timezone_seconds %}
-{% assign busy_until = hour_seconds | times: 16 | plus: now %}
+{% assign busy_until = hour_seconds | times: 1 | plus: now %}
 {% assign start = now | divided_by: day_seconds | times: day_seconds %}
 {% assign start_day = site.time | date: "%w" %}
 {% assign end = start | plus: offset_seconds %}
