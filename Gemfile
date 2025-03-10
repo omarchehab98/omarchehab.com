@@ -41,3 +41,5 @@ gem "webrick", "~> 1.7"
 
 # Pin ffi to a version compatible with older RubyGems
 gem "ffi", "< 1.16.0"
+
+gem 'csv', '~> 3.0'

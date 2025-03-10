@@ -1,9 +1,12 @@
 [build]
-  command = "jekyll build"
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
-  RUBY_VERSION = "2.7.1"
+  RUBY_VERSION = "3.4.2"
 
 [[plugins]]
   package = "netlify-plugin-jekyll-cache"
+
+[dev]
+  targetPort = 4000
