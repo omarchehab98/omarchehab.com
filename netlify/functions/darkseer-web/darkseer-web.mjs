@@ -1,10 +1,18 @@
 // Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
-export default (request, context) => {
+export default async (request, context) => {
   try {
-    const url = new URL(request.url)
-    const subject = url.searchParams.get('name') || 'World'
+		if (request.method !== 'POST') {
+			throw new Error('Unexpected request method');
+		}
+		if (!request.headers.get('content-type')?.startsWith('application/json')) {
+			throw new Error('Unexpected content-type header');
+		}
 
-    return new Response(`Hello ${subject}`)
+		const {prompt} = await request.json();
+
+    return Response.json({
+			message: 'Prompt ' + prompt,
+		})
   } catch (error) {
     return new Response(error.toString(), {
       status: 500,
