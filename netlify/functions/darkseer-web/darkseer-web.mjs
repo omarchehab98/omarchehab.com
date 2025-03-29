@@ -8,7 +8,7 @@ export default async (request, context) => {
 			throw new Error('Unexpected content-type header');
 		}
 
-		const {prompt} = await request.json();
+		const {data: {prompt}} = await request.json();
 
     return Response.json({
 			message: 'Prompt ' + prompt,
